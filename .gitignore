@@ -1,0 +1,26 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Data files
+*.csv
+*.tsv
+*.xlsx
+*.parquet
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+
+# Logs and temporary output
+*.log
+*.tmp
