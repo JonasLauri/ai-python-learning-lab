@@ -1,4 +1,5 @@
 # Exercise 3 — File Organizer Simulation
+# Identify any files dynamically and store results into dict
 
 files = [
     "photo.jpg",
