@@ -47,6 +47,12 @@ I’ve built the base layer of Python logic — the foundation every automation,
 
 ##
 
+Completed Exercise 3 – File Organizer Simulation
+- Practiced dictionary creation, list grouping, and dynamic structure building
+- Learned how to identify file types using string methods (endswith)
+- Reviewed conditional logic (if / elif / else) and basic case-style structures
+- Explored how to loop through dictionaries and format printed outputs
+
 ### Goals
 - Build a solid foundation in Python syntax and logic  
 - Practice clean, readable, and reusable code patterns  
