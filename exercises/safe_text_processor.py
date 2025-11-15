@@ -22,7 +22,7 @@ def get_user_words(prompt: str = "Enter your text: ") -> list[str]:
     Take validated user input - not empty/numeric
     Do string cleaning, lowercase and return words in list.
     """
-    user_input = input(prompt).strip()  # ? strip why
+    user_input = input(prompt).strip()
 
     if not user_input:
         raise ValueError("Empty input!")
