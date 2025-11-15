@@ -27,7 +27,7 @@ def get_user_words(prompt: str = "Enter your text: ") -> list[str]:
     if not user_input:
         raise ValueError("Empty input!")
 
-    if is_numeric(user_input):
+    if is_numeric_only(user_input):
         raise ValueError("Input must not be numeric")
 
     clean_text = re.sub(r"[^\w\s]", "", user_input)
