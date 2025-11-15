@@ -8,25 +8,41 @@
 import re
 
 
-def get_user_input(prompt: str, input_type=str) -> any:
+def is_numeric_only(s: str) -> bool:
+    """Check whether the string is purely numeric."""
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+
+def get_user_words(prompt: str = "Enter your text: ") -> list[str]:
     """
     Take validated user input - not empty/numeric
     Do string cleaning, lowercase and return words in list.
     """
-    user_input = input(prompt)
+    user_input = input(prompt).strip()  # ? strip why
 
-    if user_input:
-        try:
-            user_text = input_type(user_input)
-            clean_text = re.sub(r"[^\w\s]", "", user_text)
-            return clean_text.split()
-        except TypeError:
-            print(f"Invalid input. Please enter a valid {input_type.__name__}")
-        finally:
-            print("Your text got processed successfully!")
-    else:
-        raise ValueError("Empty input")
+    if not user_input:
+        raise ValueError("Empty input!")
+
+    if is_numeric(user_input):
+        raise ValueError("Input must not be numeric")
+
+    clean_text = re.sub(r"[^\w\s]", "", user_input)
+    words = clean_text.lower().split()
+
+    return words
 
 
-user_words = get_user_input("Enter your text: ")
-print(user_words)
+def main():
+    try:
+        user_words = get_user_words()
+        print(user_words)
+    except ValueError as e:
+        print("Validation error:", e)
+
+
+if __name__ == "__main__":
+    main()

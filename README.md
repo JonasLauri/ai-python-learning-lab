@@ -1,7 +1,6 @@
 ## AI-Assisted Python Learning 
 
-This repository documents my structured Python learning process — guided and supplemented by AI.  
-It combines methodical study with real-time feedback, refactoring, and project-based exercises.
+This repository documents my structured Python learning process — guided and supplemented by AI. It combines methodical study with real-time feedback, refactoring, and project-based exercises.
 
 The goal is to build a strong foundation in Python for scripting, automation, and data engineering workflows.
 
@@ -45,13 +44,20 @@ I’ve built the base layer of Python logic — the foundation every automation,
 - Writing clean, refactored, and readable code  
 - Building data-processing logic that resembles real analytics scripts  
 
-##
-
 Completed Exercise 3 – File Organizer Simulation
 - Practiced dictionary creation, list grouping, and dynamic structure building
 - Learned how to identify file types using string methods (endswith)
 - Reviewed conditional logic (if / elif / else) and basic case-style structures
 - Explored how to loop through dictionaries and format printed outputs
+
+**Functional Logic & Error Handling**
+- Built a clean text-processing function with proper structure.
+- Validated user input (empty check + numeric-only detection).
+- Used regex to remove punctuation and return lowercase word lists.
+- Practiced raising ValueError inside functions and handling errors cleanly at the call site.
+- Strengthened understanding of separating logic, validation, and error handling.
+
+##
 
 ### Goals
 - Build a solid foundation in Python syntax and logic  
