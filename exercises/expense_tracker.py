@@ -4,11 +4,10 @@
 # Uses a closure or global dict — your choice — so that totals accumulate.
 # Returns a summary string like: "Total for Food: 124.50".
 # Updated: Improved my way as a whole program to track expenses
-dict_expenses: dict[str, float] = {}
 
 
 def is_numeric_only(s: str) -> bool:
-    """Check whether the string is purely numeric."""
+    """Check whether a string is purely numeric."""
 
     try:
         float(s)
@@ -18,7 +17,7 @@ def is_numeric_only(s: str) -> bool:
 
 
 def is_positive_amount(amount: float) -> bool:
-    """Validates that amount is a positive number"""
+    """Validates amount is a positive number."""
 
     if amount > 0:
         return True
@@ -27,7 +26,7 @@ def is_positive_amount(amount: float) -> bool:
 
 
 def get_menu_choice() -> int:
-    """Get user option command"""
+    """Handle correct user choice for program routes"""
 
     while True:
         input_option = input(
@@ -45,77 +44,71 @@ def get_menu_choice() -> int:
         print("Please enter 1, 2 or 3 option")
 
 
-def get_user_input() -> tuple[str, float]:
-    """
-    Take validated user inputs - not empty/positive amount
-    """
+def handle_add_expense(expenses: dict[str, float]) -> None:
+    """Handle user interaction for adding a new expense."""
 
+    # Ask for category & amount
     category = input("Enter category: ").strip()
-    amount_str = input("Enter amount: ").strip()
+    raw_amount = input("Enter amount: ").strip()
 
-    if not category or not amount_str:
-        raise ValueError("Please privide nesseccary input!")
-
+    # Validate input results: not empty, category not numeric, amount numeric & positive
+    if not category or not raw_amount:
+        print("Please provide nesseccary input!")
+        return
     if is_numeric_only(category):
-        raise ValueError("Category must not be numeric")
-
-    if not is_numeric_only(amount_str):
-        raise ValueError("Amount must be numeric")
-
-    amount = float(amount_str)
-
+        print("Category must not be numeric")
+        return
+    if not is_numeric_only(raw_amount):
+        print("Amount must be numeric")
+        return
+    # Cast amount to float
+    amount = float(raw_amount)
     if not is_positive_amount(amount):
-        raise ValueError("The amount must be positive")
+        print("The amount must be positive")
+        return
 
-    return category, amount
+    # Call core/logic function
+    add_expense(expenses, category, amount)
 
-
-def add_expense(category: str, amount: float) -> str:
-    """
-    Add-ups expenses based by category
-    Stores results into global dict
-    Prints results
-    """
-
-    dict_expenses[category] = dict_expenses.get(category, 0) + amount
-    return f"Total for {category}: {dict_expenses[category]:.2f}"
+    # Show handled result
+    print(f"Added {amount:.2f} to {category}. Total now: {expenses[category]:.2f}")
 
 
-def print_expenses():
-    """Print out all expenses"""
+def add_expense(expenses: dict[str, float], category: str, amount: float) -> None:
+    """Add or update an expense amount in the expenses dictionary."""
 
-    if not dict_expenses:
+    expenses[category] = expenses.get(category, 0.0) + amount
+
+
+def handle_show_summary(expenses: dict[str, float]) -> None:
+    """Display the current list of expenses to the user."""
+
+    if not expenses:
         print("No expenses recorded yet.")
-        return None
+        return
 
-    print("Current expenses based by category are:\n")
-    for category, amount in dict_expenses.items():
+    print("Current expenses  by category:\n")
+    for category, amount in expenses.items():
         print(f"{category}: {amount:.2f}")
 
 
-def run_expenses_tracker():
-    """Program controls"""
+def main():
+    """The program entry point with loop controller"""
+
+    expenses: dict[str, float] = {}
 
     while True:
         option = get_menu_choice()
 
         match option:
             case 1:
-                try:
-                    category, amount = get_user_input()
-                except ValueError as e:
-                    print(f"Error: {e}")
-                    continue
-                added_summary = add_expense(category, amount)
-                print(added_summary)
-
+                handle_add_expense(expenses)
             case 2:
-                print_expenses()
-
+                handle_show_summary(expenses)
             case 3:
                 print("Program ended!")
                 break
 
 
 if __name__ == "__main__":
-    run_expenses_tracker()
+    main()
