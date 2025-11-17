@@ -48,8 +48,8 @@ def handle_add_expense(expenses: dict[str, float]) -> None:
     """Handle user interaction for adding a new expense."""
 
     # Ask for category & amount
-    category = input("Enter category: ").strip()
-    raw_amount = input("Enter amount: ").strip()
+    category = input("Enter category: ").lower().strip()
+    raw_amount = input("Enter amount: ").lower().strip()
 
     # Validate input results: not empty, category not numeric, amount numeric & positive
     if not category or not raw_amount:
@@ -87,7 +87,7 @@ def handle_show_summary(expenses: dict[str, float]) -> None:
         print("No expenses recorded yet.")
         return
 
-    print("Current expenses  by category:\n")
+    print("Current expenses by category:")
     for category, amount in expenses.items():
         print(f"{category}: {amount:.2f}")
 
