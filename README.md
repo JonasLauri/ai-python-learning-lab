@@ -1,66 +1,94 @@
-## AI-Assisted Python Learning 
+## AI-Assisted Python Learning
 
-This repository documents my structured Python learning process — guided and supplemented by AI. It combines methodical study with real-time feedback, refactoring, and project-based exercises.
+This repository documents my structured Python learning process — guided and supplemented by AI.
+It reflects the practical fundamentals I’ve mastered before moving into real scripting and project-based development.
 
-The goal is to build a strong foundation in Python for scripting, automation, and data engineering workflows.
+The goal: build a strong foundation for automation, scripting, and engineering workflows.
 
 ##
 
-### What I’ve Learned So Far
+### What I’ve recovered So Far
 
 #### Stage 1 — Core Python Fundamentals
 
-I’ve built the base layer of Python logic — the foundation every automation, data, and engineering workflow depends on.
-
 **Variables & Data Types**
-- Declaring and updating variables  
-- Understanding mutability (lists, dicts vs strings, ints)  
-- Type conversion and inspection  
+	•	Assigning and updating variables
+	•	Mutability vs immutability (lists/dicts vs strings/ints)
+	•	Type conversion, casting, and inspection
 
 **Operators**
-- Arithmetic, comparison, logical, and assignment operators  
-- Combining conditions using `and`, `or`, `not`  
-- Membership and identity operators: `in`, `is`  
+	•	Arithmetic, comparison, logical, assignment
+	•	Combining conditions (and, or, not)
+	•	Membership and identity (in, is)
 
 **Conditional Logic**
-- `if / elif / else` structures  
-- Nested and inline (ternary) conditions  
-- Truthy and falsy values  
+	•	if / elif / else branching
+	•	Nested conditions
+	•	Inline (ternary) expressions
+	•	Truthy / falsy handling
 
 **Loops**
-- `for` and `while` loops for repetition  
-- `break`, `continue`, `pass` for control flow  
-- Looping through lists, ranges, and dictionaries  
-- Using `enumerate()` and `zip()` effectively  
+	•	for and while loops
+	•	Loop control: break, continue, pass
+	•	Iterating over lists, dictionaries, ranges
+	•	Using enumerate() and zip() for cleaner iteration
 
 **Data Manipulation**
-- Filtering and aggregating lists of dictionaries  
-- Built-ins like `sum`, `len`, `max`, `min`, `round`  
-- List comprehensions and generator expressions  
-- Handling division safely (`ZeroDivisionError`)  
+	•	Filtering and aggregating lists of dictionaries
+	•	Using built-ins (sum, len, max, min)
+	•	List comprehensions and generator expressions
+	•	Safe handling of division and edge cases
 
-**Conceptual Additions**
-- Using `lambda` and functional patterns (`max(..., key=...)`)  
-- Writing clean, refactored, and readable code  
-- Building data-processing logic that resembles real analytics scripts  
-
-Completed Exercise 3 – File Organizer Simulation
-- Practiced dictionary creation, list grouping, and dynamic structure building
-- Learned how to identify file types using string methods (endswith)
-- Reviewed conditional logic (if / elif / else) and basic case-style structures
-- Explored how to loop through dictionaries and format printed outputs
-
-**Functional Logic & Error Handling**
-- Built a clean text-processing function with proper structure.
-- Validated user input (empty check + numeric-only detection).
-- Used regex to remove punctuation and return lowercase word lists.
-- Practiced raising ValueError inside functions and handling errors cleanly at the call site.
-- Strengthened understanding of separating logic, validation, and error handling.
+**Functional Logic & Code Quality**
+	•	lambda expressions and functional patterns (key= usage)
+	•	Writing readable, modular, refactored code
+	•	Separating logic, validation, and error handling
+	•	Building small functional components that mimic real automation tasks
 
 ##
 
-### Goals
-- Build a solid foundation in Python syntax and logic  
-- Practice clean, readable, and reusable code patterns  
-- Learn through AI-guided study and feedback loops  
-- Prepare for automation and data analysis workflows  
+#### Completed Exercises
+
+**Exercise — File Organizer Simulation**
+	•	Grouped files dynamically using dictionaries
+	•	Detected types using extension checks
+	•	Practiced conditionals and data shaping
+	•	Generated structured output
+	•	Strengthened dynamic data-structure thinking
+
+**Exercise — Text Processing Function**
+	•	Added validation with custom error messaging
+	•	Used regex to clean and normalize text
+	•	Split logic into validation → processing → output
+	•	Practiced raising/handling ValueError cleanly
+	•	Reinforced clean functional design
+
+##
+
+**Why This Repository Exists**
+	•	To record the fundamentals before moving into automation scripting
+	•	To document progression, not build a full project
+	•	To serve as a base reference for patterns I’ll reuse
+	•	To mark the completion of core Python logic
+
+##
+
+#### Next Steps
+
+Learning continues in new project repositories:
+	•	File I/O (reading/writing files)
+	•	Directory automation (organizing, renaming, scanning)
+	•	CLI-style scripts and arguments
+	•	Modular project structure
+	•	More advanced data processing logic
+
+I have already moved the Expense Tracker and other practice projects into separate repositories where the next learning phase will continue.
+
+##
+
+Status
+
+✔️ Core Python Fundamentals — Completed
+✔️ Functional Patterns & Error Handling — Completed
+✔️ Foundation Exercises — Completed
+➡️ Development continues in dedicated project repos
